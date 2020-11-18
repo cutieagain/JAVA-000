@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean id="userService" class="com.javacamp.week5.service.UserServiceImpl"></bean>
-    <bean id="as" class="com.javacamp.week5.entity.UserEntity">
+    <bean id="as" class="com.javacamp.week5.entity.Student">
         <constructor-arg name="name" value="张三"></constructor-arg>
     </bean>
 
