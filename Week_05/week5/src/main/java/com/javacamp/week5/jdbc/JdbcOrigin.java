@@ -14,14 +14,23 @@ public class JdbcOrigin {
         Connection con = null;		//连接
         PreparedStatement pstmt = null;	//使用预编译语句
         ResultSet rs = null;	//获取的结果集
+        Statement statement = null;
         try {
             Class.forName(driverClassName); //执行驱动
             con = DriverManager.getConnection(url, username, password); //获取连接
-            String sql = "INSERT INTO test.student(name) VALUES (?)"; //设置的预编译语句格式
+
+            //原生
+            String sql = "INSERT INTO test.student(name) VALUES ('"+ student.getName() +"')"; //设置的预编译语句格式
+            statement = con.createStatement();
+            statement.execute(sql);
+
+            //预编译
+            sql = "INSERT INTO test.student(name) VALUES (?)"; //设置的预编译语句格式
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, student.getName());
             pstmt.execute();
             con.commit();//事务方式
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }finally {
@@ -65,7 +74,7 @@ public class JdbcOrigin {
     }
 
     public static void main(String[] args) throws SQLException {
-        new JdbcOrigin().addStudent(new Student("cutie1"));
+        new JdbcOrigin().addStudent(new Student("cutie2"));
         new JdbcOrigin().listInfo();
     }
 
