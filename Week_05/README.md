@@ -20,6 +20,8 @@ Week05 作业题目（周六）：
 2.（选做）maven/spring 的 profile 机制，都有什么用法？
 3.（选做）总结 Hibernate 与 MyBatis 的各方面异同点。
 4.（必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。
+https://github.com/cutieagain/JAVA-000/blob/main/Week_05/week5/src/test/java/com/javacamp/week5/loadbean/SKSTest.java
+
 5.（选做）学习 MyBatis-generator 的用法和原理，学会自定义 TypeHandler 处理复杂类型。
 6.（必做）研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：
 1）使用 JDBC 原生接口，实现数据库的增删改查操作。
