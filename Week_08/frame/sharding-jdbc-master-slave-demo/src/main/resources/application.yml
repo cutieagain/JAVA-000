@@ -1,0 +1,85 @@
+server:
+  port: 8080
+
+#spring:
+#  datasource: #表示该配置直接为Spring容器负责处理
+#    type: com.alibaba.druid.pool.DruidDataSource #配置当前要使用的数据源的操作类型那个
+#    #    driver-class-name: com.mysql.jdbc.Driver #配置MySQL的驱动程序类
+#    url: jdbc:mysql://localhost:3339/test?useUnicode=true&characterEncoding=utf8
+#    username: root
+#    password: 123456
+#    filters: stat,wall,log4j #druid监控配置
+#    dbcp2:
+#    min-idle: 5 #数据库连接池的最小维持连接数
+#    initial-size: 5 #初始化提供的连接数
+#    max-total: 5 #最大的连接数
+#    max-wait-millis: 200 #等待连接获取的最大超时时间
+#
+#mybatis:
+#  mapper-locations: classpath:mapper/*Mapper.xml
+#  type-aliases-package: com.cutie.shardingjdbcmasterslavedemo.entity
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    default-fetch-size: 100
+#    default-statement-timeout: 30
+
+#spring:
+#  shardingsphere:
+#    datasource:
+#      names: master,slave0
+#      master:
+#        driver-class-name: com.mysql.jdbc.Driver
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        url: jdbc:mysql://localhost:3339/test?characterEncoding=utf-8
+#        username: root
+#        password: 123456
+#      slave0:
+#        driver-class-name: com.mysql.jdbc.Driver
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        url: jdbc:mysql://local:3340/test?characterEncoding=utf-8
+#        username: root
+#        password: 123456
+#    masterslave:
+#      load-balance-algorithm-type: round_robin
+#      master-data-source-name: master
+#      name: ms
+#      slave-data-source-names: slave0
+#    props:
+#      sql:
+#        show: true
+
+sharding:
+  jdbc:
+    dataSource:
+      names: master,slave1
+      master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3339/test?useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&useSSL=false&serverTimezone=GMT
+        username: root
+        password: 123456
+        maxPoolSize: 20
+      slave1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3340/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT
+        username: root
+        password: 123456
+        maxPoolSize: 20
+    config:
+      masterslave:
+        load-balance-algorithm-type: round_robin
+        name: m1s1
+        master-data-source-name: master
+        slave-data-source-names: slave1
+    props:
+      sql:
+        show: true
+
+mybatis:
+  type-aliases-package: com.example.demo.mapper
+  mapperLocations: classpath:mapper/*Mapper.xml
+
+spring:
+  main:
+    allow-bean-definition-overriding: true

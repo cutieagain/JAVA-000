@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cutie.mybatisdruiddemo.dao.UserMapper">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cutie.mybatisdruiddemo.entity.UserEntity" id="userMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+
+    <insert id="insert">
+        insert into `user` (id, `name`) values (#{id}, #{name})
+    </insert>
+    <delete id="delete">
+        delete from `user` where id = #{id}
+    </delete>
+    <select id="list" resultType="com.cutie.mybatisdruiddemo.entity.UserEntity">
+        select * from `user`
+    </select>
+    <select id="getById" resultType="com.cutie.mybatisdruiddemo.entity.UserEntity">
+        select * from `user` where id = #{id}
+    </select>
+
+</mapper>
