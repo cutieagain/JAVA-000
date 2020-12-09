@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cutie.mybatisdruiddemo.dao.OrderMapper">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cutie.mybatisdruiddemo.entity.OrderEntity" id="userMap">
+        <result property="orderId" column="order_id"/>
+        <result property="userId" column="user_id"/>
+    </resultMap>
+
+    <insert id="insert">
+        insert into `t_order` (order_id, `user_id`) values (#{orderId}, #{userId})
+    </insert>
+    <delete id="delete">
+        delete from `t_order` where order_id = #{id}
+    </delete>
+    <select id="list" resultType="com.cutie.mybatisdruiddemo.entity.OrderEntity">
+        select * from `t_order`
+    </select>
+    <select id="getById" resultType="com.cutie.mybatisdruiddemo.entity.OrderEntity">
+        select * from `t_order` where order_id = #{id}
+    </select>
+
+</mapper>
