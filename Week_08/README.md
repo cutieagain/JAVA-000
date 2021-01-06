@@ -17,6 +17,7 @@ https://github.com/cutieagain/JAVA-000/tree/main/Week_08
 
 **2.（必做）**基于 hmily TCC 或 ShardingSphere 的 Atomikos XA 实现一个简单的分布式事务应用 demo（二选一），提交到 Github。
 
+
 **3.（选做）**基于 ShardingSphere narayana XA 实现一个简单的分布式事务 demo。
 
 **4.（选做）**基于 seata 框架实现 TCC 或 AT 模式的分布式事务 demo。
