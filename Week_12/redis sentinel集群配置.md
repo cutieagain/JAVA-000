@@ -28,7 +28,7 @@ dir /tmp
 
 dentinel monitor mymaster 127.0.0.1 6379 2
 
-首先配置好 [redis主从配置](https://www.notion.so/redis-0ef7ff2ffc574cd5b0182ba7167df828) 看之前的
+首先配置好 [redis安装及主从配置](https://github.com/cutieagain/JAVA-000/blob/main/Week_12/redis安装及主从配置.md) 看之前的
 
 ## 配置sentinel集群
 

@@ -8,10 +8,13 @@
 
   - [x]  配置 redis 的主从复制
 
-  [redis安装及主从配置.md](https://github.com/cutieagain/JAVA-000/blob/main/Week_12/redis安装及主从配置.md)
+  [redis安装及主从配置](https://github.com/cutieagain/JAVA-000/blob/main/Week_12/redis安装及主从配置.md)
 
-  - [ ]  sentinel 高可用
+  - [x]  sentinel 高可用
+  [redis sentinel集群配置](https://github.com/cutieagain/JAVA-000/blob/main/Week_12/redis%20sentinel%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE.md)
+
   - [ ]  Cluster 集群。
+  
 
 参考：https://juejin.cn/post/6844903908398071815
 
